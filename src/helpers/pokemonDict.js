@@ -1,0 +1,21 @@
+export const buttonDict = {
+    fighting: { name: "LUTADOR", bgColor: "#852816" },
+    ice: { name: "GELO", bgColor: "B4EDF8" },
+    bug: { name: "INSETO", bgColor: "#87950C" },
+    normal: { name: "NORMAL", bgColor: "#C4C0B4" },
+    dark: { name: "SOMBRIO", bgColor: "#413831" },
+    flying: { name: "VOADOR", bgColor: "#8FA4FF" },
+    psychic: { name: "PSÍQUICO", bgColor: "#E25484" },
+    dragon: { name: "DRAGÃO", bgColor: "#7361D1" },
+    shadow: { name: "FANTASMA", bgColor: "#6969AF" },
+    rock: { name: "PEDRA", bgColor: "#5E491C" },
+    electric: { name: "ELÉTRICO", bgColor: "#E08D00" },
+    grass: { name: "PLANTA", bgColor: "#67AF32" },
+    steel: { name: "METÁLICO", bgColor: "#7F8488" },
+    fairy: { name: "FADA", bgColor: "#E29FE6" },
+    ground: { name: " TERRA", bgColor: "#C5A455" },
+    water: { name: "ÁGUA", bgColor: "#3B9BF1" },
+    poison: { name: "ÁGUA", bgColor: "#924990" },
+    unknown: { name: "DESCONHECIDO", bgColor: "#E4E9F2" },
+  };
+  
