@@ -7,7 +7,7 @@ export const SideBarWrapper = styled.aside`
   left: 20px;
   display: flex;
   flex-direction: column;
-  top: 70px;
+  top: 40px;
 `;
 
 export const SideBarList = styled.ul`
@@ -21,14 +21,14 @@ export const SideBarItem = styled.li`
   justify-content: center;
   width:70px;
   height: 70px;
-  border: 4px solid #004a45;
+  border: ${(props) => props.border || "4px solid #004a45"};
   border-radius: 12.8rem;
   font-size: 12px;
   font-weight: bold;
   color: #004a45;
   cursor: pointer;
   transition: all 0.2s;
-  background-color: #00d68f;
+  background-color: ${(props) => props.backgroundColor || "#00d68f"};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
