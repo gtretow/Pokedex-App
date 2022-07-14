@@ -44,4 +44,5 @@ export const SideBarItem = styled.li`
 `;
 
 export const PokeballImg = styled.img`
+
 `

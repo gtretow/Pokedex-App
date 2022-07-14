@@ -1,24 +1,22 @@
-import * as React from 'react'
-import * as M from '../../Styles/Modal'
-import HandlePokemonModal from './HandlePokemonModal/HandlePokemonModal';
+import * as React from "react";
+import * as M from "../../Styles/Modal";
+import HandlePokemonModal from "./HandlePokemonModal/HandlePokemonModal";
 
-export default function NewPokemonModal({newPokemon, editPokemon, closePokedex, closePokemonEdit, pokemonInfo}) {
+export default function NewPokemonModal({
+  newPokemon,
+  closePokedex,
+  closePokemonEdit,
+  pokemonInfo,
+  editPokemon,
+}) {
   return (
     <>
-      <M.HomeWrapper
-        onClick={newPokemon ? closePokedex : closePokemonEdit}
-      >
-      </M.HomeWrapper>
-      {newPokemon &&(
-        <HandlePokemonModal 
-          close={closePokedex} 
-          pokemonInfo={pokemonInfo}
-        />
-      )}
-      {editPokemon &&(
-        <HandlePokemonModal/>
-      )}
+      <M.HomeWrapper onClick={newPokemon ? closePokedex : closePokemonEdit} />
+      <HandlePokemonModal
+        close={newPokemon ? closePokedex : closePokemonEdit}
+        pokemonInfo={pokemonInfo}
+        alreadyCaptured={editPokemon}
+      />
     </>
-
-  )
+  );
 }
