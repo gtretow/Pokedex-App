@@ -18,7 +18,8 @@ export const pokemonSlice = createSlice({
       state.value.push(action.payload);
     },
     releasePokemon: (state, action) => {
-      state.value.filter((pkmn) => pkmn.name !== action.payload);
+      let pokemonName = action.payload;
+      state.value = state.value.filter((pkmn) => pkmn.name !== pokemonName);
     },
   },
 });

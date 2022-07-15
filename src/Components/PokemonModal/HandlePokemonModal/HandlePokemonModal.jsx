@@ -2,15 +2,25 @@ import React from "react";
 import { buttonDict } from "../../../helpers/pokemonDict";
 import * as S from "./styled";
 import { VscChromeClose } from "react-icons/vsc";
-import { capturePokemon } from "../../../features/pokemons";
+import { capturePokemon, releasePokemon } from "../../../features/pokemons";
 import { useDispatch } from "react-redux";
-
-export default function HandlePokemonModal({ pokemonInfo, close }) {
+import releaseBall from "../../../Assets/_24_open-pokeball-png_open-pokeball-download-open-pokeball-378x450-png-clipart-download.png";
+export default function HandlePokemonModal({
+  pokemonInfo,
+  close,
+  alreadyCaptured,
+  closePokemonEdit,
+}) {
   const dispatch = useDispatch();
 
   function catchNewPokemon() {
     dispatch(capturePokemon(pokemonInfo));
     close();
+  }
+
+  function releaseOldPokemon() {
+    dispatch(releasePokemon(pokemonInfo.name));
+    closePokemonEdit();
   }
 
   return (
@@ -26,7 +36,6 @@ export default function HandlePokemonModal({ pokemonInfo, close }) {
           <S.Image src={pokemonInfo?.sprites?.front_default} />
         </S.ImageCard>
       </S.Container>
-
       <S.Container>
         <S.StatsContainer>
           <S.Container marginBottom="10px" marginTop="60px">
@@ -74,31 +83,45 @@ export default function HandlePokemonModal({ pokemonInfo, close }) {
           </S.TypeWrapper>
         </S.StatsContainer>
       </S.Container>
-
       <S.Container>
         <S.StatsContainer>
           <S.Text>HABILIDADES</S.Text>
           <S.Container>
-            {pokemonInfo?.abilities?.map((ability, idx) => {
-              return (
-                <S.Description key={idx}>
-                  {`${ability.ability.name.toUpperCase()}, `}
-                </S.Description>
-              );
-            })}
+            <ul>
+              {pokemonInfo?.abilities?.map((ability, idx) => {
+                return (
+                  <li>
+                    <S.Description key={idx}>
+                      {`${ability.ability.name}`}
+                    </S.Description>
+                  </li>
+                );
+              })}
+            </ul>
           </S.Container>
         </S.StatsContainer>
       </S.Container>
-
-      <S.Container>
-        <S.Container>
+      {alreadyCaptured && (
+        <S.listWrapper>
           <S.Text>ESTATISTICAS</S.Text>
-        </S.Container>
-      </S.Container>
-
+          {pokemonInfo.stats.map((info, idx) => (
+            <S.StatsList key={idx}>
+              <div>
+                <p>{info.stat.name}</p>
+              </div>
+              <div>
+                <p>{info.base_stat}</p>
+              </div>
+            </S.StatsList>
+          ))}
+        </S.listWrapper>
+      )}
       <S.Container>
         <S.Container>
-          <S.Button onClick={catchNewPokemon} />
+          <S.Button
+            background={alreadyCaptured ? `url(${releaseBall})` : ""}
+            onClick={alreadyCaptured ? releaseOldPokemon : catchNewPokemon}
+          />
         </S.Container>
       </S.Container>
     </S.StandardModal>

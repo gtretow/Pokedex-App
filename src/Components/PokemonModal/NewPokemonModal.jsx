@@ -16,6 +16,7 @@ export default function NewPokemonModal({
         close={newPokemon ? closePokedex : closePokemonEdit}
         pokemonInfo={pokemonInfo}
         alreadyCaptured={editPokemon}
+        closePokemonEdit={closePokemonEdit}
       />
     </>
   );

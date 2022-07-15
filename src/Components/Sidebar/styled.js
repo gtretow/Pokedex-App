@@ -10,20 +10,20 @@ export const SideBarWrapper = styled.aside`
   top: 40px;
 `;
 
-export const SideBarList = styled.ul`
+export const SideBarList = styled.li`
   display: flex;
   flex-direction: column;
 `;
 
-export const SideBarItem = styled.li`
+export const SideBarItem = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
-  width:70px;
+  width: 70px;
   height: 70px;
   border: ${(props) => props.border || "4px solid #004a45"};
   border-radius: 12.8rem;
-  font-size: 12px;
+  font-size: 20px;
   font-weight: bold;
   color: #004a45;
   cursor: pointer;
@@ -32,17 +32,23 @@ export const SideBarItem = styled.li`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 1.6rem;
 
   &:hover {
     background-color: #004a45;
     color: #00d68f;
   }
+`;
 
-  &:not(last-of-type) {
-    margin-bottom: 1.6rem;
+export const CreateButton = styled(SideBarItem)`
+  border: 4px solid #db2c66;
+  background-color: #ff3d71;
+  color: white;
+
+  &:hover {
+    background-color: #db2c66;
+    color: white;
   }
 `;
 
-export const PokeballImg = styled.img`
-
-`
+export const PokeballImg = styled.img``;

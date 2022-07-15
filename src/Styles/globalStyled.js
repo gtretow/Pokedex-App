@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   * {
@@ -16,6 +16,7 @@ export default createGlobalStyle`
   html,
   body {
     height: 100%;
+    font-family: 'Roboto', sans-serif;
   }
 
   body {
@@ -66,4 +67,4 @@ export default createGlobalStyle`
   ul {
     list-style: none;
   }
-`
+`;
