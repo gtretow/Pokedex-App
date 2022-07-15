@@ -24,10 +24,10 @@ export default function HandlePokemonModal({
   }
 
   return (
-    <S.StandardModal>
+    <S.StandardModal height={alreadyCaptured ? "800px" : "400px"}>
       <S.Container
         background={"linear-gradient(to right,#41EB89,#38F8D3)"}
-        height="100px"
+        height="120px"
       >
         <S.CloseButton onClick={close}>
           <VscChromeClose size={32} />

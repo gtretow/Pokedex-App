@@ -2,7 +2,7 @@ import styled from "styled-components";
 import pokeball from "../../../Assets/Pokeball-PNG-Image-Background-1.png";
 
 export const StandardModal = styled.div`
-  height: 800px;
+  height: ${(props) => props.height || "600px"};
   min-height: 600px;
   min-width: 400px;
   width: 370px;
@@ -24,10 +24,6 @@ export const Container = styled.div`
   border-radius: 30px 30px 0 0;
   margin-bottom: ${(props) => props.marginBottom || ""};
   margin-top: ${(props) => props.marginTop || ""};
-
-  il {
-    padding-left: 5px;
-  }
 `;
 
 export const ImageCard = styled.div`
